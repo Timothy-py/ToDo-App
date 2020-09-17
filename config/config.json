@@ -1,17 +1,19 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
+    "username": "timothy",
+    "password": "plati442",
+    "database": "todos-dev",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres",
+    "port": 5432
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
+    "username": "timothy",
+    "password": "plati442",
+    "database": "todos-dev",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres",
+    "port": 5432
   },
   "production": {
     "username": "root",
