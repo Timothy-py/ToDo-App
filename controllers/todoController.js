@@ -3,7 +3,7 @@ const models =  require('../models')
 
 
 // get all todos
-exports.getTodos = async (req, res, next)=>{
+exports.getTodos = (req, res, next)=>{
 
     models.Todo.findAll()
     .then((todo)=>{
@@ -17,6 +17,29 @@ exports.getTodos = async (req, res, next)=>{
     .catch((err)=>{
         res.json({
             message: `There was an error retrieving all todos: ${err}`,
+            status: false
+        })
+    })
+
+};
+
+
+// create a todo
+exports.createTodo = (req, res, next)=>{
+
+    models.Todo.create({
+        title: req.body.title
+    })
+    .then((todo)=>{
+        res.json({
+            message: "Todo created successfully",
+            data: todo,
+            status: true
+        })
+    })
+    .catch((err)=>{
+        res.json({
+            message: `There was an error creating todo ${err}`,
             status: false
         })
     })
